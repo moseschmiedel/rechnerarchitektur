@@ -174,20 +174,30 @@ uint64_t __compute_timediff(struct timespec *start, struct timespec *end,
  * Public function
  * ************************************************** */
 
-void bubblesort(struct mysort_data_struct *data, size_t data_length,
-                size_t elem_size, __compar_fn_t compare_f) {
+void bubblesort(void *array, size_t data_length, size_t elem_size,
+                __compar_fn_t compare_f) {
+    char *array_base = (char *)array;
 
     size_t idx = 0;
     size_t swaps = 0;
     do {
-        if (compare_f(data->array[idx], data->array[idx + 1]) > 0) {
-            void *temp = data->array[idx];
-            data->array[idx] = data->array[idx + 1];
-            data->array[idx + 1] = temp;
+        char *elem1 = &array_base[elem_size * idx];
+        char *elem2 = &array_base[elem_size * (idx + 1)];
+        if (compare_f(elem1, elem2) > 0) {
+            for (size_t b = 0; b < elem_size; ++b) {
+                char temp = elem1[b];
+                elem1[b] = elem2[b];
+                elem2[b] = temp;
+            }
             ++swaps;
         }
-        ++idx;
-    } while (swaps > 0 && idx < data_length);
+        if (swaps > 0 || (idx + 1) >= data_length) {
+            idx = 0;
+            swaps = 0;
+        } else {
+            ++idx;
+        }
+    } while (!(swaps == 0 && (idx + 1) >= data_length));
 }
 
 int sort(struct handle_struct *h) {
@@ -205,8 +215,8 @@ int sort(struct handle_struct *h) {
     struct timespec start_time, stop_time;
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_time);
 
-    qsort(*data.array, data.len, sizeof(struct mysort_simple_2uint_struct),
-          __compare_simple_2uint_structs);
+    bubblesort(*data.array, data.len, sizeof(struct mysort_simple_2uint_struct),
+               __compare_simple_2uint_structs);
 
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &stop_time);
     h->nanoseconds = __compute_timediff(&start_time, &stop_time, 1);
