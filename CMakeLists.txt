@@ -33,3 +33,9 @@ target_compile_options(insertionsort PRIVATE -Wall -g)
 
 add_executable(insertionsort_mini insertion_sort.c)
 target_compile_options(insertionsort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
+
+add_executable(quicksort demo_main.c demo_postprocess.c demo_preprocess.c quick_sort.c)
+target_compile_options(quicksort PRIVATE -Wall -g)
+
+add_executable(quicksort_mini quick_sort.c)
+target_compile_options(quicksort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
