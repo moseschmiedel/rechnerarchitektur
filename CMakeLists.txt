@@ -27,3 +27,9 @@ target_compile_options(bubblesort PRIVATE -Wall -g)
 
 add_executable(bubblesort_mini bubble_sort.c)
 target_compile_options(bubblesort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
+
+add_executable(insertionsort demo_main.c demo_postprocess.c demo_preprocess.c insertion_sort.c)
+target_compile_options(insertionsort PRIVATE -Wall -g)
+
+add_executable(insertionsort_mini insertion_sort.c)
+target_compile_options(insertionsort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
