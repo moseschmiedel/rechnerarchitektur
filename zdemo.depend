@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1678440832 source:/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_preprocess.c
+	"demo.h"
+	<stdlib.h>
+	<getopt.h>
+	<ctype.h>
+
+1678440685 /home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo.h
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+
+1678440110 source:/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_sort.c
+	"demo.h"
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1678286452 source:/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_main.c
+	"demo.h"
+
+1678440789 source:/home/jeanm/htwk/module/rechnerarchitektur/2023/src/sort/demo_postprocess.c
+	"demo.h"
+
