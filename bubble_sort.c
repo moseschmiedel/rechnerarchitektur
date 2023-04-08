@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #define ASC 0
@@ -184,11 +185,10 @@ void bubblesort(void *array, size_t data_length, size_t elem_size,
         char *elem1 = &array_base[elem_size * idx];
         char *elem2 = &array_base[elem_size * (idx + 1)];
         if (compare_f(elem1, elem2) > 0) {
-            for (size_t b = 0; b < elem_size; ++b) {
-                char temp = elem1[b];
-                elem1[b] = elem2[b];
-                elem2[b] = temp;
-            }
+            char temp[elem_size];
+            memcpy(temp, elem1, elem_size);
+            memcpy(elem1, elem2, elem_size);
+            memcpy(elem2, temp, elem_size);
             ++swaps;
         }
         if (swaps > 0 || (idx + 1) >= data_length) {
