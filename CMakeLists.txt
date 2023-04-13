@@ -39,3 +39,9 @@ target_compile_options(quicksort PRIVATE -Wall -g)
 
 add_executable(quicksort_mini quick_sort.c)
 target_compile_options(quicksort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
+
+add_executable(quicksort_mini_o2 quick_sort.c)
+target_compile_options(quicksort_mini_o2 PRIVATE -Wall -O2 -D ENABLE_LOCAL_MAIN)
+
+add_executable(quicksort_mini_o3 quick_sort.c)
+target_compile_options(quicksort_mini_o3 PRIVATE -Wall -O3 -D ENABLE_LOCAL_MAIN)

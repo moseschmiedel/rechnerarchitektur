@@ -1,9 +1,8 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
-struct handle_struct
-{
+struct handle_struct {
     int argc;
     char **argv;
 
@@ -13,7 +12,6 @@ struct handle_struct
     uint64_t nanoseconds; // timediff
 };
 
-int pre_process(int argc,char **argv, struct handle_struct *h);
+int pre_process(int argc, char **argv, struct handle_struct *h);
 int post_process(struct handle_struct *h);
-int sort(struct handle_struct *h);
-
+int sort_handle_struct(struct handle_struct *h);
