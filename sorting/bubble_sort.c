@@ -1,12 +1,13 @@
-#include <stdlib.h>
 #include <string.h>
+
+#include "bubble_sort.h"
 
 /* **************************************************
  * Public function
  * ************************************************** */
 
-void bubblesort(void *array, size_t array_length, size_t elem_size,
-                __compar_fn_t compare_f) {
+void bubble_sort(void *array, size_t array_length, size_t elem_size,
+                 __compar_fn_t compare_f) {
     char *array_base = (char *)array;
 
     size_t idx = 0;

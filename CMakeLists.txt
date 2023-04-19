@@ -16,32 +16,19 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(demosort demo_main.c demo_postprocess.c demo_preprocess.c demo_sort.c)
-target_compile_options(demosort PRIVATE -Wall -g)
+set(CLI_COMPILE_OPTIONS -Wall -g)
 
-add_executable(demosort_mini demo_sort.c)
-target_compile_options(demosort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
+add_executable(std_qsort main.c postprocess.c preprocess.c include/qsort.include.c)
+target_compile_options(std_qsort PRIVATE "${CLI_COMPILE_OPTIONS}")
 
-add_executable(bubblesort demo_main.c demo_postprocess.c demo_preprocess.c bubble_sort.c)
-target_compile_options(bubblesort PRIVATE -Wall -g)
+set(SORT_FUNCTION_NAME "bubble_sort")
+add_executable(bubble_sort main.c postprocess.c preprocess.c include/bubble_sort.include.c)
+target_compile_options(bubble_sort PRIVATE "${CLI_COMPILE_OPTIONS}")
 
-add_executable(bubblesort_mini bubble_sort.c)
-target_compile_options(bubblesort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
+set(SORT_FUNCTION_NAME "insertion_sort")
+add_executable(insertion_sort main.c postprocess.c preprocess.c include/insertion_sort.include.c)
+target_compile_options(insertion_sort PRIVATE "${CLI_COMPILE_OPTIONS}")
 
-add_executable(insertionsort demo_main.c demo_postprocess.c demo_preprocess.c insertion_sort.c)
-target_compile_options(insertionsort PRIVATE -Wall -g)
-
-add_executable(insertionsort_mini insertion_sort.c)
-target_compile_options(insertionsort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
-
-add_executable(quicksort demo_main.c demo_postprocess.c demo_preprocess.c quick_sort.c)
-target_compile_options(quicksort PRIVATE -Wall -g)
-
-add_executable(quicksort_mini quick_sort.c)
-target_compile_options(quicksort_mini PRIVATE -Wall -g -D ENABLE_LOCAL_MAIN)
-
-add_executable(quicksort_mini_o2 quick_sort.c)
-target_compile_options(quicksort_mini_o2 PRIVATE -Wall -O2 -D ENABLE_LOCAL_MAIN)
-
-add_executable(quicksort_mini_o3 quick_sort.c)
-target_compile_options(quicksort_mini_o3 PRIVATE -Wall -O3 -D ENABLE_LOCAL_MAIN)
+set(SORT_FUNCTION_NAME "quick_sort")
+add_executable(quick_sort main.c postprocess.c preprocess.c include/quick_sort.include.c)
+target_compile_options(quick_sort PRIVATE "${CLI_COMPILE_OPTIONS}")

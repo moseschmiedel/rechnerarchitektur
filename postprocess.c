@@ -1,8 +1,9 @@
-#include "demo.h"
+#include "types.h"
 
-int post_process(struct handle_struct *h)
-{
-    if (h->verbose) fprintf(stdout,"primary computing required %lu Nanoseconds\n",h->nanoseconds);
+int post_process(struct handle_struct *h) {
+    if (h->verbose)
+        fprintf(stdout, "primary computing required %lu Nanoseconds\n",
+                h->nanoseconds);
 
     // free allocated memory here, if required
 

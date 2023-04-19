@@ -4,14 +4,24 @@
 #include <string.h>
 #include <time.h>
 
-#include "demo.h"
-
 #define ASC 0
 #define DESC 1
 #define VAR1 2
 #define VAR2 3
 
+// clang-format off
+#cmakedefine SORT_FUNCTION_NAME @SORT_FUNCTION_NAME@
+#cmakedefine ENABLE_LOCAL_MAIN @ENABLE_LOCAL_MAIN@
+#cmakedefine INCLUDE_ALGORITHM_HEADER @INCLUDE_ALGORITHM_HEADER@
+// clang-format on
+
+#ifdef INCLUDE_ALGORITHM_HEADER
+#include "@SORT_FUNCTION_NAME@.h"
+#endif
+
+#ifndef SORT_FUNCTION_NAME
 #define SORT_FUNCTION_NAME qsort
+#endif
 
 /* struct holds the array to sort/sorted */
 struct mysort_data_struct {
@@ -26,6 +36,7 @@ struct mysort_simple_2uint_struct {
     uint64_t value;
 };
 
+#ifdef ENABLE_LOCAL_MAIN
 int main(int argc, char **argv) {
     struct handle_struct h;
     h.argc = argc;
@@ -39,6 +50,7 @@ int main(int argc, char **argv) {
         h.verbose = 1;
     return sort_handle_struct(&h);
 }
+#endif
 
 /**
  * allocated memory must be freed after usage
