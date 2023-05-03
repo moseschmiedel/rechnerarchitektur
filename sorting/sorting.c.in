@@ -13,6 +13,7 @@
 #cmakedefine SORT_FUNCTION_NAME @SORT_FUNCTION_NAME@
 #cmakedefine ENABLE_LOCAL_MAIN @ENABLE_LOCAL_MAIN@
 #cmakedefine INCLUDE_ALGORITHM_HEADER @INCLUDE_ALGORITHM_HEADER@
+#cmakedefine RIPES @RIPES@
 // clang-format on
 
 #ifdef INCLUDE_ALGORITHM_HEADER
@@ -151,6 +152,7 @@ void __print_key_value_pairs(struct mysort_data_struct *data,
 
 } // end of __print_key_value_pairs
 
+#ifndef RIPES
 /**
  * compute, print and return ns elapsed
  * ***************************************************/
@@ -169,6 +171,7 @@ uint64_t __compute_timediff(struct timespec *start, struct timespec *end,
         fprintf(stdout, "NS elapsed: %lu ns\n", nanosec);
     return nanosec;
 } // end __compute_timediff
+#endif
 
 /**
  * orchestrate timing and execution of sort algorithm
@@ -185,15 +188,19 @@ int sort_handle_struct(struct handle_struct *h) {
     if (h->verbose)
         __print_key_value_pairs(&data, "Davor");
 
+#ifndef RIPES
     struct timespec start_time, stop_time;
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_time);
+#endif
 
     SORT_FUNCTION_NAME(*data.array, data.len,
                        sizeof(struct mysort_simple_2uint_struct),
                        __compare_simple_2uint_structs);
 
+#ifndef RIPES
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &stop_time);
     h->nanoseconds = __compute_timediff(&start_time, &stop_time, 1);
+#endif
 
     if (h->verbose)
         __print_key_value_pairs(&data, "Danach");

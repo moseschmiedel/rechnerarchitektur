@@ -34,7 +34,7 @@ endfunction()
 foreach(ALGORITHM ${ALGORITHMS})
     cat(${CMAKE_BINARY_DIR}/${ALGORITHM}.skeleton.c.in ${CMAKE_SOURCE_DIR}/types.h ${CMAKE_SOURCE_DIR}/sorting/sorting.c.in)
 
-    if(EXISTS ${CMAKE_SOURCE_DIR}/${ALGORITHM}.c)
+    if(EXISTS ${CMAKE_SOURCE_DIR}/sorting/${ALGORITHM}.c)
         cat(${CMAKE_BINARY_DIR}/${ALGORITHM}.ripes.c.in ${CMAKE_SOURCE_DIR}/types.h ${CMAKE_SOURCE_DIR}/sorting/${ALGORITHM}.c ${CMAKE_SOURCE_DIR}/sorting/sorting.c.in)
     else()
         cat(${CMAKE_BINARY_DIR}/${ALGORITHM}.ripes.c.in ${CMAKE_SOURCE_DIR}/types.h ${CMAKE_SOURCE_DIR}/sorting/sorting.c.in)
@@ -48,14 +48,18 @@ foreach(ALGORITHM ${ALGORITHMS})
 
     set(ENABLE_LOCAL_MAIN 1)
     configure_file(${CMAKE_BINARY_DIR}/${ALGORITHM}.skeleton.c.in ${ALGORITHM}.skeleton_mini.c)
-    unset(INCLUDE_ALGORITHM_HEADER)
+    set(INCLUDE_ALGORITHM_HEADER 0)
+    set(RIPES 1)
     configure_file(${CMAKE_BINARY_DIR}/${ALGORITHM}.ripes.c.in ${ALGORITHM}.ripes.c)
 
 
 
     foreach(OPTIMIZATION ${OPTIMIZATIONS})
         if(EXISTS ${CMAKE_SOURCE_DIR}/sorting/${ALGORITHM}.c)
-            add_library(${ALGORITHM}_${OPTIMIZATION} OBJECT ${CMAKE_SOURCE_DIR}/sorting/${ALGORITHM}.c)
+            add_library(${ALGORITHM}_${OPTIMIZATION} STATIC ${CMAKE_SOURCE_DIR}/sorting/${ALGORITHM}.c)
+            set_target_properties(${ALGORITHM}_${OPTIMIZATION} PROPERTIES PREFIX "lib_")
+            set_target_properties(${ALGORITHM}_${OPTIMIZATION} PROPERTIES OUTPUT_NAME ${ALGORITHM})
+            set_target_properties(${ALGORITHM}_${OPTIMIZATION} PROPERTIES SUFFIX ".${OPTIMIZATION}.so")
             target_compile_options(${ALGORITHM}_${OPTIMIZATION} PRIVATE ${CLI_COMPILE_OPTIONS} "-${OPTIMIZATION}")
 
             add_executable(${ALGORITHM}_${OPTIMIZATION}_mini ${CMAKE_BINARY_DIR}/${ALGORITHM}.skeleton_mini.c)

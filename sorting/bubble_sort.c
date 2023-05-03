@@ -1,6 +1,5 @@
+#include <stdlib.h>
 #include <string.h>
-
-#include "bubble_sort.h"
 
 /* **************************************************
  * Public function
