@@ -93,6 +93,9 @@ foreach(ALGORITHM ${ALGORITHMS})
     endforeach()
 endforeach()
 
+add_executable(sobel sobel.c)
+target_compile_options(sobel PRIVATE -DENABLE_LOCAL_MAIN -DDEBUG -g)
+
 # add_executable(std_qsort main.c postprocess.c preprocess.c include/qsort.include.c)
 # target_compile_options(std_qsort PRIVATE "${CLI_COMPILE_OPTIONS}")
 #
