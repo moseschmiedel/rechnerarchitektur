@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "eisvogel2.h"
+#include "eisvogel.h"
 
 #define ENABLE_LOCAL_MAIN
 #define DEBUG
@@ -15,17 +15,16 @@
  */
 void sobel(unsigned char *in_buffer, size_t width, size_t height,
            unsigned char *out_buffer) {
-    size_t max_height = height * width;
-    for (unsigned int height_idx = 0; height_idx < max_height;
-         height_idx += width) {
+    for (unsigned int height_idx = 0; height_idx < height; ++height_idx) {
         for (unsigned int width_idx = 0; width_idx < width; ++width_idx) {
-            out_buffer[height_idx + width_idx] =
-                (in_buffer[height_idx + (width_idx * 3) + 0] * 100 /
-                 470) + // red
-                (in_buffer[height_idx + (width_idx * 3) + 1] * 100 /
-                 140) + // green
-                (in_buffer[height_idx + (width_idx * 3) + 2] * 100 / 138) %
-                    256; // blue
+            out_buffer[(height_idx * width) + width_idx] =
+                ((in_buffer[(height_idx * width * 3) + (width_idx * 3) + 0] *
+                  100 / 470) + // red
+                 (in_buffer[(height_idx * width * 3) + (width_idx * 3) + 1] *
+                  100 / 140) + // green
+                 (in_buffer[(height_idx * width * 3) + (width_idx * 3) + 2] *
+                  100 / 138)) %
+                256; // blue
         }
     }
 }
