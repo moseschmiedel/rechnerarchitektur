@@ -4,3 +4,4 @@ obj/
 dump*
 *.out.*
 vgcore.*
+*.ppm
