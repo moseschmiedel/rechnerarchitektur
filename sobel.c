@@ -59,8 +59,12 @@ void write_ppm_file(char *path, unsigned char *img_buffer, unsigned int width,
                     unsigned int height) {
     FILE *fp;
     fp = fopen(path, "wb");
+    if (fp == NULL) {
+        perror("Error while opening output file");
+        exit(1);
+    }
     const char *comment = "# image with sobel filter applied";
-    fprintf(fp, "P5\n %s\n %d %d\n %d\n", comment, width, height, 255);
+    fprintf(fp, "P5\n%s\n%d %d\n%d\n", comment, width, height, 255);
     fwrite(img_buffer, width * height, 1, fp);
     if (ferror(fp)) {
         perror("Error while writing output file");
@@ -74,7 +78,7 @@ int main(int argc, char *argv[]) {
     size_t width = 128;
     size_t height = 85;
     char *in_path = "eisvogel.data";
-    char *out_path = "./sobel.ppm";
+    char *out_path = "sobel.ppm";
     if (argc == 4) {
         width = atoi(argv[1]);
         height = atoi(argv[2]);
