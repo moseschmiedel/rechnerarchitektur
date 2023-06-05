@@ -9,13 +9,13 @@
 #include <stdio.h>
 #endif
 
-#define IMG_INDEX(w_idx, h_idx) (h_idx * width) + w_idx
-#define RED(w_idx, h_idx) (h_idx * width * 3) + (w_idx * 3) + 0
-#define GREEN(w_idx, h_idx) (h_idx * width * 3) + (w_idx * 3) + 1
-#define BLUE(w_idx, h_idx) (h_idx * width * 3) + (w_idx * 3) + 2
+#define IMG_INDEX(w_idx, h_idx) (((h_idx)*width) + (w_idx))
+#define RED(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 0)
+#define GREEN(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 1)
+#define BLUE(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 2)
 
-double S_x[3][3] = {{1.0, 0.0, -1.0}, {2.0, 0.0, -2.0}, {1.0, 0.0, -1.0}};
-double S_y[3][3] = {{1.0, 2.0, 1.0}, {0.0, 0.0, 0.0}, {-1.0, -2.0, -1.0}};
+int S_x[3][3] = {{1, 0, -1}, {2, 0, -2}, {1, 0, -1}};
+int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
 
 /**
  * `in_buffer` is rgb image with `height` and `width`
@@ -23,10 +23,9 @@ double S_y[3][3] = {{1.0, 2.0, 1.0}, {0.0, 0.0, 0.0}, {-1.0, -2.0, -1.0}};
  */
 void sobel(unsigned char *in_buffer, size_t width, size_t height,
            unsigned char *out_buffer) {
-    for (unsigned int width_idx = 0; width_idx < width - 0; ++width_idx) {
-        for (unsigned int height_idx = 0; height_idx < height - 0;
-             ++height_idx) {
-            double G_x =
+    for (unsigned int height_idx = 0; height_idx < height; ++height_idx) {
+        for (unsigned int width_idx = 0; width_idx < width; ++width_idx) {
+            unsigned char G_x = abs(
                 (S_x[0][0] * in_buffer[RED(width_idx, height_idx)]) +
                 (S_x[0][1] * in_buffer[RED(width_idx, height_idx + 1)]) +
                 (S_x[0][2] * in_buffer[RED(width_idx, height_idx + 2)]) +
@@ -35,9 +34,9 @@ void sobel(unsigned char *in_buffer, size_t width, size_t height,
                 (S_x[1][2] * in_buffer[RED(width_idx + 1, height_idx + 2)]) +
                 (S_x[2][0] * in_buffer[RED(width_idx + 2, height_idx)]) +
                 (S_x[2][1] * in_buffer[RED(width_idx + 2, height_idx + 1)]) +
-                (S_x[2][2] * in_buffer[RED(width_idx + 2, height_idx + 2)]);
+                (S_x[2][2] * in_buffer[RED(width_idx + 2, height_idx + 2)]));
 
-            double G_y =
+            unsigned char G_y = abs(
                 (S_y[0][0] * in_buffer[RED(width_idx, height_idx)]) +
                 (S_y[0][1] * in_buffer[RED(width_idx, height_idx + 1)]) +
                 (S_y[0][2] * in_buffer[RED(width_idx, height_idx + 2)]) +
@@ -46,10 +45,10 @@ void sobel(unsigned char *in_buffer, size_t width, size_t height,
                 (S_y[1][2] * in_buffer[RED(width_idx + 1, height_idx + 2)]) +
                 (S_y[2][0] * in_buffer[RED(width_idx + 2, height_idx)]) +
                 (S_y[2][1] * in_buffer[RED(width_idx + 2, height_idx + 1)]) +
-                (S_y[2][2] * in_buffer[RED(width_idx + 2, height_idx + 2)]);
+                (S_y[2][2] * in_buffer[RED(width_idx + 2, height_idx + 2)]));
 
             out_buffer[IMG_INDEX(width_idx, height_idx)] =
-                (unsigned char)sqrt((G_x * G_x) + (G_y * G_y));
+                (unsigned char)sqrt(pow(G_x, 2) + pow(G_y, 2));
         }
     }
 }
@@ -79,28 +78,32 @@ int main(int argc, char *argv[]) {
     size_t height = 85;
     char *in_path = "eisvogel.data";
     char *out_path = "sobel.ppm";
-    if (argc == 4) {
+    if (argc == 5) {
         width = atoi(argv[1]);
         height = atoi(argv[2]);
         in_path = argv[3];
         out_path = argv[4];
     }
 
-    unsigned char final_image[width * height];
+    unsigned char *final_image = calloc(width * height, 1);
 
-    unsigned char img[width * height * 3];
+    unsigned char *img = calloc(width * height * 3, 1);
 
     printf("Reading input file...\n");
     FILE *fp;
     fp = fopen(in_path, "rb");
     for (size_t idx = 0; idx < height; ++idx) {
-        unsigned char img_line[width];
+        unsigned char *img_line = calloc(width * 3, 1);
+        if (img_line == NULL) {
+            perror("Could not allocate 'img_line'");
+            exit(1);
+        }
         fread(img_line, sizeof(unsigned char), width * 3, fp);
         if (ferror(fp)) {
             perror("Error while reading input file");
-            break;
+            exit(1);
         }
-        memcpy(&img[idx * width * 3], &img_line,
+        memcpy(img + (idx * width * 3), img_line,
                sizeof(unsigned char) * width * 3);
     }
     fclose(fp);
