@@ -1,17 +1,23 @@
-#include <bits/time.h>
 #include <math.h>
-#include <stdio.h>
+#include <omp.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+
+#define ENABLE_LOCAL_MAIN
+#define DEBUG
+
+#ifdef DEBUG
+#include <stdio.h>
+#endif
 
 #define IMG_INDEX(w_idx, h_idx) (((h_idx)*width) + (w_idx))
 #define RED(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 0)
 #define GREEN(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 1)
 #define BLUE(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 2)
 
-int S_x[3][3] = {{1, 0, -1}, {2, 0, -2}, {1, 0, -1}};
-int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
+const int S_x[3][3] = {{1, 0, -1}, {2, 0, -2}, {1, 0, -1}};
+const int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
 
 /**
  * `in_buffer` is rgb image with `height` and `width`
@@ -19,32 +25,35 @@ int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
  */
 void sobel(unsigned char *in_buffer, size_t width, size_t height,
            unsigned char *out_buffer) {
-    for (unsigned int height_idx = 0; height_idx < height; ++height_idx) {
-        for (unsigned int width_idx = 0; width_idx < width; ++width_idx) {
-            unsigned char G_x = abs(
-                (S_x[0][0] * in_buffer[RED(width_idx, height_idx)]) +
-                (S_x[0][1] * in_buffer[RED(width_idx, height_idx + 1)]) +
-                (S_x[0][2] * in_buffer[RED(width_idx, height_idx + 2)]) +
-                (S_x[1][0] * in_buffer[RED(width_idx + 1, height_idx)]) +
-                (S_x[1][1] * in_buffer[RED(width_idx + 1, height_idx + 1)]) +
-                (S_x[1][2] * in_buffer[RED(width_idx + 1, height_idx + 2)]) +
-                (S_x[2][0] * in_buffer[RED(width_idx + 2, height_idx)]) +
-                (S_x[2][1] * in_buffer[RED(width_idx + 2, height_idx + 1)]) +
-                (S_x[2][2] * in_buffer[RED(width_idx + 2, height_idx + 2)]));
+#pragma omp parallel shared(in_buffer, width, height, out_buffer)
+    {
+        const size_t chunk = height * width / omp_get_max_threads();
+#pragma omp for schedule(static, chunk) nowait
+        for (unsigned int idx = 0; idx < height * width; ++idx) {
+            const size_t in_idx = idx * 3;
+            const unsigned char G_x =
+                abs((S_x[0][0] * in_buffer[in_idx]) +
+                    (S_x[0][1] * in_buffer[in_idx + 3]) +
+                    (S_x[0][2] * in_buffer[in_idx + 6]) +
+                    (S_x[1][0] * in_buffer[in_idx + (width * 3)]) +
+                    (S_x[1][1] * in_buffer[in_idx + (width * 3) + 3]) +
+                    (S_x[1][2] * in_buffer[in_idx + (width * 3) + 6]) +
+                    (S_x[2][0] * in_buffer[in_idx + (width * 6)]) +
+                    (S_x[2][1] * in_buffer[in_idx + (width * 6) + 3]) +
+                    (S_x[2][2] * in_buffer[in_idx + (width * 6) + 6]));
 
-            unsigned char G_y = abs(
-                (S_y[0][0] * in_buffer[RED(width_idx, height_idx)]) +
-                (S_y[0][1] * in_buffer[RED(width_idx, height_idx + 1)]) +
-                (S_y[0][2] * in_buffer[RED(width_idx, height_idx + 2)]) +
-                (S_y[1][0] * in_buffer[RED(width_idx + 1, height_idx)]) +
-                (S_y[1][1] * in_buffer[RED(width_idx + 1, height_idx + 1)]) +
-                (S_y[1][2] * in_buffer[RED(width_idx + 1, height_idx + 2)]) +
-                (S_y[2][0] * in_buffer[RED(width_idx + 2, height_idx)]) +
-                (S_y[2][1] * in_buffer[RED(width_idx + 2, height_idx + 1)]) +
-                (S_y[2][2] * in_buffer[RED(width_idx + 2, height_idx + 2)]));
+            const unsigned char G_y =
+                abs((S_y[0][0] * in_buffer[in_idx]) +
+                    (S_y[0][1] * in_buffer[in_idx + 3]) +
+                    (S_y[0][2] * in_buffer[in_idx + 6]) +
+                    (S_y[1][0] * in_buffer[in_idx + (width * 3)]) +
+                    (S_y[1][1] * in_buffer[in_idx + (width * 3) + 3]) +
+                    (S_y[1][2] * in_buffer[in_idx + (width * 3) + 6]) +
+                    (S_y[2][0] * in_buffer[in_idx + (width * 6)]) +
+                    (S_y[2][1] * in_buffer[in_idx + (width * 6) + 3]) +
+                    (S_y[2][2] * in_buffer[in_idx + (width * 6) + 6]));
 
-            out_buffer[IMG_INDEX(width_idx, height_idx)] =
-                (unsigned char)sqrt(pow(G_x, 2) + pow(G_y, 2));
+            out_buffer[idx] = (unsigned char)sqrt(pow(G_x, 2) + pow(G_y, 2));
         }
     }
 }
@@ -68,6 +77,7 @@ void write_ppm_file(char *path, unsigned char *img_buffer, unsigned int width,
 }
 #endif
 
+#ifdef ENABLE_LOCAL_MAIN
 int main(int argc, char *argv[]) {
     size_t width = 128;
     size_t height = 85;
@@ -105,15 +115,13 @@ int main(int argc, char *argv[]) {
     printf("Read input file.\n");
 
     printf("Compute sobel filter...\n");
-    struct timespec start;
-    struct timespec end;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
+    double start;
+    double end;
+    start = omp_get_wtime();
     sobel(img, width, height, final_image);
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
+    end = omp_get_wtime();
     printf("Computed sobel filter.\n");
-    double time_taken = (end.tv_sec - start.tv_sec) * 1e9;
-    time_taken = (time_taken + (end.tv_nsec - start.tv_nsec)) * 1e-9;
-    printf("sobel took %.9f seconds\n", time_taken);
+    printf("sobel took %.9f seconds\n", end - start);
 
 #ifdef DEBUG
     printf("Writing output file...\n");
@@ -123,3 +131,4 @@ int main(int argc, char *argv[]) {
 
     return EXIT_SUCCESS;
 }
+#endif
