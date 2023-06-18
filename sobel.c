@@ -1,14 +1,8 @@
-#include <bits/time.h>
+#include "eisvogel.h"
 #include <math.h>
+#include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
-#define IMG_INDEX(w_idx, h_idx) (((h_idx)*width) + (w_idx))
-#define RED(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 0)
-#define GREEN(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 1)
-#define BLUE(w_idx, h_idx) (((h_idx)*width * 3) + ((w_idx)*3) + 2)
 
 const int S_x[3][3] = {{1, 0, -1}, {2, 0, -2}, {1, 0, -1}};
 const int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
@@ -17,7 +11,7 @@ const int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
  * `in_buffer` is rgb image with `height` and `width`
  * `out_buffer` needs to be as big as `height * width` of `in_buffer`
  */
-void sobel(unsigned char *in_buffer, size_t width, size_t height,
+void sobel(const unsigned char *in_buffer, size_t width, size_t height,
            unsigned char *out_buffer) {
     for (unsigned int idx = 0; idx < height * width; ++idx) {
         const size_t in_idx = idx * 3;
@@ -67,55 +61,18 @@ void write_ppm_file(char *path, unsigned char *img_buffer, unsigned int width,
 #endif
 
 int main(int argc, char *argv[]) {
-    size_t width = 128;
-    size_t height = 85;
-    char *in_path = "eisvogel.data";
-    char *out_path = "sobel.ppm";
-    if (argc == 5) {
-        width = atoi(argv[1]);
-        height = atoi(argv[2]);
-        in_path = argv[3];
-        out_path = argv[4];
-    }
+    unsigned char final_image[eisvogel.width * eisvogel.height];
 
-    unsigned char *final_image = calloc(width * height, 1);
-
-    unsigned char *img = calloc(width * height * 3, 1);
-
-    printf("Reading input file...\n");
-    FILE *fp;
-    fp = fopen(in_path, "rb");
-    for (size_t idx = 0; idx < height; ++idx) {
-        unsigned char *img_line = calloc(width * 3, 1);
-        if (img_line == NULL) {
-            perror("Could not allocate 'img_line'");
-            exit(1);
-        }
-        fread(img_line, sizeof(unsigned char), width * 3, fp);
-        if (ferror(fp)) {
-            perror("Error while reading input file");
-            exit(1);
-        }
-        memcpy(img + (idx * width * 3), img_line,
-               sizeof(unsigned char) * width * 3);
-    }
-    fclose(fp);
-    printf("Read input file.\n");
-
-    printf("Compute sobel filter...\n");
-    struct timespec start;
-    struct timespec end;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
-    sobel(img, width, height, final_image);
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
-    printf("Computed sobel filter.\n");
-    double time_taken = (end.tv_sec - start.tv_sec) * 1e9;
-    time_taken = (time_taken + (end.tv_nsec - start.tv_nsec)) * 1e-9;
-    printf("sobel took %.9f seconds\n", time_taken);
+    double start;
+    double end;
+    start = omp_get_wtime();
+    sobel(eisvogel.pixel_data, eisvogel.width, eisvogel.height, final_image);
+    end = omp_get_wtime();
+    printf("%.9f,omp_wtime\n", end - start);
 
 #ifdef DEBUG
     printf("Writing output file...\n");
-    write_ppm_file(out_path, final_image, width, height);
+    write_ppm_file("sobel.ppm", final_image, eisvogel.width, eisvogel.height);
     printf("Wrote output file.\n");
 #endif
 
