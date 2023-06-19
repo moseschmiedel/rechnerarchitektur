@@ -66,7 +66,10 @@ int main(int argc, char *argv[]) {
     double start;
     double end;
     start = omp_get_wtime();
-    sobel(eisvogel.pixel_data, eisvogel.width, eisvogel.height, final_image);
+    for (size_t i = 0; i < 100; ++i) {
+        sobel(eisvogel.pixel_data, eisvogel.width, eisvogel.height,
+              final_image);
+    }
     end = omp_get_wtime();
     printf("%.9f,omp_wtime\n", end - start);
 

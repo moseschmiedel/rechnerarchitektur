@@ -67,9 +67,12 @@ int main(int argc, char *argv[]) {
 
     double start;
     double end;
+    size_t num_threads = atoi(argv[1]);
     start = omp_get_wtime();
-    sobel(eisvogel.pixel_data, eisvogel.width, eisvogel.height, final_image,
-          atoi(argv[1]));
+    for (size_t i = 0; i < 100; ++i) {
+        sobel(eisvogel.pixel_data, eisvogel.width, eisvogel.height, final_image,
+              num_threads);
+    }
     end = omp_get_wtime();
     printf("%.9f,omp_wtime\n", end - start);
 
