@@ -1,0 +1,1 @@
+gcc "CMakeFiles/sobel-sequential-O3.dir/sobel.c.o" -o sobel-sequential-O3  -lm /usr/lib/libgomp.so /usr/lib/libpthread.a 

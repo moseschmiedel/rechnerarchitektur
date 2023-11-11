@@ -1,0 +1,1 @@
+gcc "CMakeFiles/sobel-seq-debug.dir/sobel.c.o" -o sobel-seq-debug  -lm /usr/lib/libgomp.so /usr/lib/libpthread.a 

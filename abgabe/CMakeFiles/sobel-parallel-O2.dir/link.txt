@@ -1,0 +1,1 @@
+gcc "CMakeFiles/sobel-parallel-O2.dir/sobel-parallel.c.o" -o sobel-parallel-O2  -lm /usr/lib/libgomp.so /usr/lib/libpthread.a 

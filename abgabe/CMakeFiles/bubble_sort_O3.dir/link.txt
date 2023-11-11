@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib_bubble_sort.O3.so CMakeFiles/bubble_sort_O3.dir/sorting/bubble_sort.c.o
+/usr/bin/ranlib lib_bubble_sort.O3.so

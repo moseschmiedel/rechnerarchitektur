@@ -1,0 +1,8 @@
+xor,2
+sub,2
+jne,1
+add,1
+call,2
+lea,1
+ret,1
+mov,9

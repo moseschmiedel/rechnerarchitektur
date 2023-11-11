@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib_insertion_sort.g.so CMakeFiles/insertion_sort_g.dir/sorting/insertion_sort.c.o
+/usr/bin/ranlib lib_insertion_sort.g.so

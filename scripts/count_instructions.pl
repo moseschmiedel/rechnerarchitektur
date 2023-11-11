@@ -3,14 +3,14 @@
 use v5.36;
 use warnings;
 
-my @algorithms = ( 'bubble_sort', 'quick_sort', 'qsort', 'insertion_sort' );
+my @algorithms = ( 'sobel-sequential', 'sobel-parallel' );
 
 my $algo_regex;
 for my $algo (@algorithms) {
-    $algo_regex .= "|lib_$algo\\.g\\.so";
-    $algo_regex .= "|lib_$algo\\.O1\\.so";
-    $algo_regex .= "|lib_$algo\\.O2\\.so";
-    $algo_regex .= "|lib_$algo\\.O3\\.so";
+    $algo_regex .= "|$algo-g";
+    $algo_regex .= "|$algo-O1";
+    $algo_regex .= "|$algo-O2";
+    $algo_regex .= "|$algo-O3";
 }
 my @foo = split '', $algo_regex;
 shift @foo;
@@ -31,7 +31,8 @@ for my $file_name (@binary_dir_content) {
 
         my %instr_counts;
 
-        my @obj_lines = qx{objdump -d $binary_dir_path/$file_name};
+        my @obj_lines =
+          qx{objdump --disassemble=sobel -Matt $binary_dir_path/$file_name};
         for my $line (@obj_lines) {
             if ( $line =~ m/^ \s .* $/x ) {
                 $line =~ s/^.+\t.+\t+([a-z]+)?\s+.*$/$1/p;

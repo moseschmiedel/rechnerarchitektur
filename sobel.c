@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
               final_image);
     }
     end = omp_get_wtime();
-    printf("%.9f,omp_wtime\n", end - start);
+    printf("%.9f,omp_wtime\n", end-start);
 
 #ifdef DEBUG
     printf("Writing output file...\n");

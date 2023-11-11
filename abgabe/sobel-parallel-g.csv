@@ -1,0 +1,10 @@
+sub,2
+xor,1
+leave,1
+push,1
+ret,1
+mov,21
+call,2
+nop,1
+je,1
+lea,2

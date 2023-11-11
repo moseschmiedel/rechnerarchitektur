@@ -1,0 +1,416 @@
+
+bin/sobel-sequential-g,title
+sequential,execution_mode
+TIME,measurement_type
+0.079452594,omp_wtime
+80.17,msec,cpu-clock:u,80173229,100.00,0.993,CPUs utilized
+149319712,,cycles:u,80173229,100.00,1.863,GHz
+357087321,,instructions:u,80173229,100.00,2.39,insn per cycle
+80752332,ns,duration_time:u,80752332,100.00,1.007,G/sec
+CACHE,measurement_type
+0.080229111,omp_wtime
+81.04,msec,cpu-clock:u,81045243,100.00,0.994,CPUs utilized
+149386657,,cycles:u,67049359,82.00,1.843,GHz
+357202592,,instructions:u,67044160,82.00,2.39,insn per cycle
+284,,page-faults:u,81045243,100.00,3.504,K/sec
+157841,,cache-references:u,67649936,83.00,1.948,M/sec
+14207,,cache-misses:u,68041602,83.00,9.001,of all cache refs
+22267201,,branches:u,68045199,83.00,274.751,M/sec
+402216,,branch-misses:u,67395959,83.00,1.81,of all branches
+81498341,ns,duration_time:u,81498341,100.00,1.006,G/sec
+
+bin/sobel-sequential-O1,title
+sequential,execution_mode
+TIME,measurement_type
+0.005044542,omp_wtime
+5.86,msec,cpu-clock:u,5862086,100.00,0.932,CPUs utilized
+9220790,,cycles:u,5862086,100.00,1.575,GHz
+32461950,,instructions:u,5862086,100.00,3.52,insn per cycle
+6283927,ns,duration_time:u,6283927,100.00,1.073,G/sec
+CACHE,measurement_type
+0.005194173,omp_wtime
+6.03,msec,cpu-clock:u,6035642,100.00,0.926,CPUs utilized
+9881262,,cycles:u,5036848,83.00,1.637,GHz
+31434626,,instructions:u,5038903,83.00,3.18,insn per cycle
+276,,page-faults:u,6035642,100.00,45.735,K/sec
+103635,,cache-references:u,5036017,83.00,17.173,M/sec
+13138,,cache-misses:u,5021860,83.00,12.677,of all cache refs
+750358,,branches:u,5048841,83.00,124.339,M/sec
+4942,,branch-misses:u,4995741,82.00,0.66,of all branches
+6513738,ns,duration_time:u,6513738,100.00,1.079,G/sec
+
+bin/sobel-sequential-O2,title
+sequential,execution_mode
+TIME,measurement_type
+0.004910662,omp_wtime
+5.66,msec,cpu-clock:u,5657632,100.00,0.951,CPUs utilized
+8961369,,cycles:u,5657632,100.00,1.584,GHz
+32461946,,instructions:u,5657632,100.00,3.62,insn per cycle
+5949429,ns,duration_time:u,5949429,100.00,1.051,G/sec
+CACHE,measurement_type
+0.005122839,omp_wtime
+6.17,msec,cpu-clock:u,6182848,100.00,0.933,CPUs utilized
+10324055,,cycles:u,5085480,82.00,1.674,GHz
+31179410,,instructions:u,5185888,83.00,3.02,insn per cycle
+280,,page-faults:u,6182848,100.00,45.402,K/sec
+101808,,cache-references:u,5183754,83.00,16.508,M/sec
+11287,,cache-misses:u,5183263,83.00,11.087,of all cache refs
+745515,,branches:u,5182561,83.00,120.884,M/sec
+4986,,branch-misses:u,5093294,82.00,0.67,of all branches
+6607534,ns,duration_time:u,6607534,100.00,1.071,G/sec
+
+bin/sobel-sequential-O3,title
+sequential,execution_mode
+TIME,measurement_type
+0.004855998,omp_wtime
+5.67,msec,cpu-clock:u,5670997,100.00,0.918,CPUs utilized
+8872700,,cycles:u,5670997,100.00,1.564,GHz
+32461937,,instructions:u,5670997,100.00,3.66,insn per cycle
+6178189,ns,duration_time:u,6178189,100.00,1.089,G/sec
+CACHE,measurement_type
+0.005174025,omp_wtime
+6.04,msec,cpu-clock:u,6037936,100.00,0.929,CPUs utilized
+9314226,,cycles:u,5041688,83.00,1.543,GHz
+31311284,,instructions:u,5039863,83.00,3.36,insn per cycle
+275,,page-faults:u,6037936,100.00,45.555,K/sec
+106924,,cache-references:u,5038001,83.00,17.712,M/sec
+16074,,cache-misses:u,5038130,83.00,15.033,of all cache refs
+753088,,branches:u,5037540,83.00,124.751,M/sec
+864,,branch-misses:u,4994458,82.00,0.11,of all branches
+6495714,ns,duration_time:u,6495714,100.00,1.076,G/sec
+
+bin/sobel-parallel-g,title
+parallel,execution_mode
+1,num_threads
+TIME,measurement_type
+0.079608947,omp_wtime
+80.38,msec,cpu-clock:u,80376259,100.00,0.993,CPUs utilized
+150059629,,cycles:u,80376259,100.00,1.867,GHz
+354995410,,instructions:u,80376259,100.00,2.37,insn per cycle
+80950524,ns,duration_time:u,80950524,100.00,1.007,G/sec
+CACHE,measurement_type
+0.079802961,omp_wtime
+80.64,msec,cpu-clock:u,80644993,100.00,0.995,CPUs utilized
+149064590,,cycles:u,66639573,82.00,1.848,GHz
+354312453,,instructions:u,66651252,82.00,2.38,insn per cycle
+284,,page-faults:u,80644993,100.00,3.522,K/sec
+147570,,cache-references:u,67319370,83.00,1.830,M/sec
+13242,,cache-misses:u,67643703,83.00,8.973,of all cache refs
+22273626,,branches:u,67648113,83.00,276.197,M/sec
+402851,,branch-misses:u,67322954,83.00,1.81,of all branches
+81061432,ns,duration_time:u,81061432,100.00,1.005,G/sec
+
+bin/sobel-parallel-g,title
+parallel,execution_mode
+2,num_threads
+TIME,measurement_type
+0.040068078,omp_wtime
+40.97,msec,cpu-clock:u,40968929,100.00,0.989,CPUs utilized
+75620106,,cycles:u,40968929,100.00,1.846,GHz
+176124440,,instructions:u,40968929,100.00,2.33,insn per cycle
+41436875,ns,duration_time:u,41436875,100.00,1.011,G/sec
+CACHE,measurement_type
+0.041496448,omp_wtime
+83.30,msec,cpu-clock:u,83311956,100.00,1.938,CPUs utilized
+153279280,,cycles:u,69711383,83.00,1.840,GHz
+353517129,,instructions:u,69424308,83.00,2.31,insn per cycle
+286,,page-faults:u,83311956,100.00,3.433,K/sec
+162187,,cache-references:u,69312304,83.00,1.947,M/sec
+17309,,cache-misses:u,68784434,82.00,10.672,of all cache refs
+22370686,,branches:u,69309913,83.00,268.550,M/sec
+402300,,branch-misses:u,70017438,84.00,1.80,of all branches
+42973167,ns,duration_time:u,42973167,100.00,515.873,M/sec
+
+bin/sobel-parallel-g,title
+parallel,execution_mode
+4,num_threads
+TIME,measurement_type
+0.020318914,omp_wtime
+21.23,msec,cpu-clock:u,21227307,100.00,0.986,CPUs utilized
+38432031,,cycles:u,21227307,100.00,1.810,GHz
+86692647,,instructions:u,21227307,100.00,2.26,insn per cycle
+21532059,ns,duration_time:u,21532059,100.00,1.014,G/sec
+CACHE,measurement_type
+0.021205397,omp_wtime
+85.46,msec,cpu-clock:u,85473050,100.00,3.759,CPUs utilized
+157365781,,cycles:u,72056371,84.00,1.841,GHz
+353420817,,instructions:u,69487786,81.00,2.25,insn per cycle
+302,,page-faults:u,85473050,100.00,3.534,K/sec
+163273,,cache-references:u,69476463,81.00,1.911,M/sec
+17130,,cache-misses:u,69689222,84.00,10.492,of all cache refs
+22335312,,branches:u,73240305,85.00,261.353,M/sec
+403113,,branch-misses:u,73415103,85.00,1.80,of all branches
+22737170,ns,duration_time:u,22737170,100.00,266.056,M/sec
+
+bin/sobel-parallel-g,title
+parallel,execution_mode
+8,num_threads
+TIME,measurement_type
+0.010654155,omp_wtime
+11.54,msec,cpu-clock:u,11541922,100.00,0.974,CPUs utilized
+19926792,,cycles:u,11541922,100.00,1.726,GHz
+42884609,,instructions:u,11541922,100.00,2.15,insn per cycle
+11855929,ns,duration_time:u,11855929,100.00,1.027,G/sec
+CACHE,measurement_type
+0.011085454,omp_wtime
+88.57,msec,cpu-clock:u,88597789,100.00,7.082,CPUs utilized
+162305004,,cycles:u,76603839,86.00,1.832,GHz
+351640964,,instructions:u,72624217,81.00,2.17,insn per cycle
+305,,page-faults:u,88597789,100.00,3.444,K/sec
+172518,,cache-references:u,72608496,81.00,1.948,M/sec
+24459,,cache-misses:u,72607514,81.00,14.178,of all cache refs
+22511221,,branches:u,72650067,81.00,254.161,M/sec
+408936,,branch-misses:u,75894812,89.00,1.82,of all branches
+12506379,ns,duration_time:u,12506379,100.00,141.202,M/sec
+
+bin/sobel-parallel-O1,title
+parallel,execution_mode
+1,num_threads
+TIME,measurement_type
+0.004976304,omp_wtime
+5.73,msec,cpu-clock:u,5725129,100.00,0.946,CPUs utilized
+9161228,,cycles:u,5725129,100.00,1.600,GHz
+32466953,,instructions:u,5725129,100.00,3.54,insn per cycle
+6054176,ns,duration_time:u,6054176,100.00,1.057,G/sec
+CACHE,measurement_type
+0.005279904,omp_wtime
+6.02,msec,cpu-clock:u,6027996,100.00,0.911,CPUs utilized
+8993714,,cycles:u,5059220,83.00,1.493,GHz
+31242106,,instructions:u,5028611,83.00,3.47,insn per cycle
+281,,page-faults:u,6027996,100.00,46.641,K/sec
+109221,,cache-references:u,5070721,84.00,18.129,M/sec
+21631,,cache-misses:u,5027770,83.00,19.805,of all cache refs
+753443,,branches:u,5076550,84.00,125.058,M/sec
+249,,branch-misses:u,4877108,80.00,0.03,of all branches
+6610410,ns,duration_time:u,6610410,100.00,1.097,G/sec
+
+bin/sobel-parallel-O1,title
+parallel,execution_mode
+2,num_threads
+TIME,measurement_type
+0.002553770,omp_wtime
+3.39,msec,cpu-clock:u,3385340,100.00,0.920,CPUs utilized
+4812589,,cycles:u,3385340,100.00,1.421,GHz
+16386307,,instructions:u,3385340,100.00,3.40,insn per cycle
+3681525,ns,duration_time:u,3681525,100.00,1.087,G/sec
+CACHE,measurement_type
+0.002957818,omp_wtime
+6.82,msec,cpu-clock:u,6827527,100.00,1.600,CPUs utilized
+10542987,,cycles:u,5307887,77.00,1.545,GHz
+29548563,,instructions:u,4833757,70.00,2.80,insn per cycle
+283,,page-faults:u,6827527,100.00,41.471,K/sec
+104462,,cache-references:u,4828498,70.00,15.308,M/sec
+13017,,cache-misses:u,5769201,89.00,12.461,of all cache refs
+784190,,branches:u,6827527,100.00,114.916,M/sec
+4032,,branch-misses:u,6570765,96.00,0.51,of all branches
+4264009,ns,duration_time:u,4264009,100.00,624.851,M/sec
+
+bin/sobel-parallel-O1,title
+parallel,execution_mode
+4,num_threads
+TIME,measurement_type
+0.001582208,omp_wtime
+2.39,msec,cpu-clock:u,2392448,100.00,0.888,CPUs utilized
+2923920,,cycles:u,2392448,100.00,1.221,GHz
+8380601,,instructions:u,2392448,100.00,2.87,insn per cycle
+2695697,ns,duration_time:u,2695697,100.00,1.126,G/sec
+CACHE,measurement_type
+0.001607535,omp_wtime
+7.22,msec,cpu-clock:u,7229240,100.00,2.369,CPUs utilized
+10972812,,cycles:u,4542300,62.00,1.519,GHz
+14104212,,instructions:u,3289240,76.00,1.29,insn per cycle
+287,,page-faults:u,7229240,100.00,39.742,K/sec
+116713,,cache-references:u,6969372,96.00,16.162,M/sec
+20930,,cache-misses:u,7229240,100.00,17.933,of all cache refs
+794653,,branches:u,7229240,100.00,110.040,M/sec
+3935,,branch-misses:u,6886808,95.00,0.50,of all branches
+3047797,ns,duration_time:u,3047797,100.00,422.044,M/sec
+
+bin/sobel-parallel-O1,title
+parallel,execution_mode
+8,num_threads
+TIME,measurement_type
+0.001009133,omp_wtime
+1.89,msec,cpu-clock:u,1891358,100.00,0.868,CPUs utilized
+1708836,,cycles:u,1891358,100.00,0.903,GHz
+4351817,,instructions:u,1891358,100.00,2.55,insn per cycle
+2180901,ns,duration_time:u,2180901,100.00,1.152,G/sec
+CACHE,measurement_type
+0.001157040,omp_wtime
+9.21,msec,cpu-clock:u,9224453,100.00,3.501,CPUs utilized
+14089903,,cycles:u,6933465,75.00,1.531,GHz
+2712133,,instructions:u,2519857,71.00,0.19,insn per cycle
+293,,page-faults:u,9224453,100.00,31.828,K/sec
+121442,,cache-references:u,9081796,98.00,13.192,M/sec
+20681,,cache-misses:u,9224453,100.00,17.030,of all cache refs
+860497,,branches:u,9224453,100.00,93.473,M/sec
+5174,,branch-misses:u,9138241,99.00,0.60,of all branches
+2629412,ns,duration_time:u,2629412,100.00,285.623,M/sec
+
+bin/sobel-parallel-O2,title
+parallel,execution_mode
+1,num_threads
+TIME,measurement_type
+0.004939585,omp_wtime
+5.69,msec,cpu-clock:u,5689913,100.00,0.946,CPUs utilized
+9025415,,cycles:u,5689913,100.00,1.586,GHz
+32466932,,instructions:u,5689913,100.00,3.60,insn per cycle
+6019240,ns,duration_time:u,6019240,100.00,1.058,G/sec
+CACHE,measurement_type
+0.005036628,omp_wtime
+5.89,msec,cpu-clock:u,5887664,100.00,0.940,CPUs utilized
+9190861,,cycles:u,4892106,83.00,1.561,GHz
+31320495,,instructions:u,4888971,83.00,3.41,insn per cycle
+277,,page-faults:u,5887664,100.00,47.050,K/sec
+108459,,cache-references:u,4887828,83.00,18.422,M/sec
+17574,,cache-misses:u,4887789,83.00,16.203,of all cache refs
+747599,,branches:u,4888379,83.00,126.985,M/sec
+3512,,branch-misses:u,4993247,84.00,0.47,of all branches
+6264100,ns,duration_time:u,6264100,100.00,1.064,G/sec
+
+bin/sobel-parallel-O2,title
+parallel,execution_mode
+2,num_threads
+TIME,measurement_type
+0.002796786,omp_wtime
+3.44,msec,cpu-clock:u,3439041,100.00,0.875,CPUs utilized
+5265980,,cycles:u,3439041,100.00,1.531,GHz
+16447758,,instructions:u,3439041,100.00,3.12,insn per cycle
+3931435,ns,duration_time:u,3931435,100.00,1.143,G/sec
+CACHE,measurement_type
+0.002711246,omp_wtime
+6.30,msec,cpu-clock:u,6299667,100.00,1.544,CPUs utilized
+8893762,,cycles:u,4304816,68.00,1.413,GHz
+29339716,,instructions:u,4299826,68.00,3.30,insn per cycle
+284,,page-faults:u,6299667,100.00,45.105,K/sec
+105682,,cache-references:u,4787610,84.00,16.784,M/sec
+16477,,cache-misses:u,6299667,100.00,15.591,of all cache refs
+771030,,branches:u,6299667,100.00,122.455,M/sec
+565,,branch-misses:u,5506749,87.00,0.07,of all branches
+4076978,ns,duration_time:u,4076978,100.00,647.508,M/sec
+
+bin/sobel-parallel-O2,title
+parallel,execution_mode
+4,num_threads
+TIME,measurement_type
+0.001660245,omp_wtime
+2.51,msec,cpu-clock:u,2505450,100.00,0.896,CPUs utilized
+3140013,,cycles:u,2505450,100.00,1.253,GHz
+8409786,,instructions:u,2505450,100.00,2.68,insn per cycle
+2797137,ns,duration_time:u,2797137,100.00,1.116,G/sec
+CACHE,measurement_type
+0.001570015,omp_wtime
+6.93,msec,cpu-clock:u,6936902,100.00,2.341,CPUs utilized
+8532576,,cycles:u,4139836,70.00,1.231,GHz
+29686440,,instructions:u,6419251,99.00,3.48,insn per cycle
+288,,page-faults:u,6936902,100.00,41.566,K/sec
+112908,,cache-references:u,6936902,100.00,16.296,M/sec
+18185,,cache-misses:u,6936902,100.00,16.106,of all cache refs
+797130,,branches:u,6936902,100.00,115.047,M/sec
+950,,branch-misses:u,3314717,47.00,0.12,of all branches
+2959311,ns,duration_time:u,2959311,100.00,427.108,M/sec
+
+bin/sobel-parallel-O2,title
+parallel,execution_mode
+8,num_threads
+TIME,measurement_type
+0.000977453,omp_wtime
+1.95,msec,cpu-clock:u,1944758,100.00,0.869,CPUs utilized
+1774450,,cycles:u,1944758,100.00,0.912,GHz
+4355930,,instructions:u,1944758,100.00,2.45,insn per cycle
+2239420,ns,duration_time:u,2239420,100.00,1.151,G/sec
+CACHE,measurement_type
+0.001681444,omp_wtime
+11.48,msec,cpu-clock:u,11500444,100.00,3.915,CPUs utilized
+14114654,,cycles:u,5792348,50.00,1.230,GHz
+28311929,,instructions:u,7879640,91.00,2.01,insn per cycle
+298,,page-faults:u,11500444,100.00,25.968,K/sec
+121309,,cache-references:u,11500444,100.00,10.571,M/sec
+21058,,cache-misses:u,11500444,100.00,17.359,of all cache refs
+939353,,branches:u,11500444,100.00,81.856,M/sec
+1151,,branch-misses:u,9328900,81.00,0.12,of all branches
+2931018,ns,duration_time:u,2931018,100.00,255.411,M/sec
+
+bin/sobel-parallel-O3,title
+parallel,execution_mode
+1,num_threads
+TIME,measurement_type
+0.004946688,omp_wtime
+5.69,msec,cpu-clock:u,5693129,100.00,0.951,CPUs utilized
+9063417,,cycles:u,5693129,100.00,1.592,GHz
+32467003,,instructions:u,5693129,100.00,3.58,insn per cycle
+5985728,ns,duration_time:u,5985728,100.00,1.051,G/sec
+CACHE,measurement_type
+0.005074248,omp_wtime
+5.80,msec,cpu-clock:u,5801723,100.00,0.943,CPUs utilized
+8857798,,cycles:u,4814281,82.00,1.527,GHz
+31656773,,instructions:u,4804001,82.00,3.57,insn per cycle
+281,,page-faults:u,5801723,100.00,48.432,K/sec
+109226,,cache-references:u,4801307,82.00,18.826,M/sec
+20797,,cache-misses:u,4802448,82.00,19.040,of all cache refs
+748402,,branches:u,4801467,82.00,128.992,M/sec
+238,,branch-misses:u,4985111,85.00,0.03,of all branches
+6154925,ns,duration_time:u,6154925,100.00,1.061,G/sec
+
+bin/sobel-parallel-O3,title
+parallel,execution_mode
+2,num_threads
+TIME,measurement_type
+0.002874612,omp_wtime
+3.71,msec,cpu-clock:u,3710420,100.00,0.928,CPUs utilized
+5396602,,cycles:u,3710420,100.00,1.454,GHz
+16460048,,instructions:u,3710420,100.00,3.05,insn per cycle
+3998350,ns,duration_time:u,3998350,100.00,1.077,G/sec
+CACHE,measurement_type
+0.003136954,omp_wtime
+7.29,msec,cpu-clock:u,7280687,100.00,1.512,CPUs utilized
+10357396,,cycles:u,5576179,76.00,1.421,GHz
+28077339,,instructions:u,5288761,72.00,2.71,insn per cycle
+284,,page-faults:u,7280687,100.00,38.954,K/sec
+109666,,cache-references:u,5282739,72.00,15.042,M/sec
+16378,,cache-misses:u,6369378,91.00,14.934,of all cache refs
+793820,,branches:u,7280687,100.00,108.883,M/sec
+1961,,branch-misses:u,6605691,90.00,0.25,of all branches
+4820893,ns,duration_time:u,4820893,100.00,661.250,M/sec
+
+bin/sobel-parallel-O3,title
+parallel,execution_mode
+4,num_threads
+TIME,measurement_type
+0.001673950,omp_wtime
+2.42,msec,cpu-clock:u,2425630,100.00,0.877,CPUs utilized
+3018481,,cycles:u,2425630,100.00,1.245,GHz
+8396333,,instructions:u,2425630,100.00,2.78,insn per cycle
+2766409,ns,duration_time:u,2766409,100.00,1.141,G/sec
+CACHE,measurement_type
+0.001653231,omp_wtime
+7.33,msec,cpu-clock:u,7338395,100.00,2.430,CPUs utilized
+11371355,,cycles:u,5368149,73.00,1.551,GHz
+20652102,,instructions:u,3351537,45.00,1.82,insn per cycle
+285,,page-faults:u,7338395,100.00,38.884,K/sec
+108830,,cache-references:u,6048686,91.00,14.848,M/sec
+17846,,cache-misses:u,7338395,100.00,16.398,of all cache refs
+786148,,branches:u,7338395,100.00,107.258,M/sec
+4902,,branch-misses:u,7246813,98.00,0.62,of all branches
+3016788,ns,duration_time:u,3016788,100.00,411.594,M/sec
+
+bin/sobel-parallel-O3,title
+parallel,execution_mode
+8,num_threads
+TIME,measurement_type
+0.001064617,omp_wtime
+2.01,msec,cpu-clock:u,2012505,100.00,0.854,CPUs utilized
+1864854,,cycles:u,2012505,100.00,0.926,GHz
+4360756,,instructions:u,2012505,100.00,2.34,insn per cycle
+2357171,ns,duration_time:u,2357171,100.00,1.171,G/sec
+CACHE,measurement_type
+0.001322100,omp_wtime
+10.18,msec,cpu-clock:u,10199281,100.00,3.683,CPUs utilized
+14551716,,cycles:u,6192015,60.00,1.429,GHz
+14435321,,instructions:u,4363795,81.00,0.99,insn per cycle
+295,,page-faults:u,10199281,100.00,28.970,K/sec
+120708,,cache-references:u,10199281,100.00,11.854,M/sec
+23010,,cache-misses:u,10199281,100.00,19.063,of all cache refs
+885506,,branches:u,10199281,100.00,86.961,M/sec
+4215,,branch-misses:u,9842752,96.00,0.48,of all branches
+2765137,ns,duration_time:u,2765137,100.00,271.549,M/sec

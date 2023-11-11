@@ -1,0 +1,1 @@
+gcc CMakeFiles/insertion_sort_O1_mini.dir/insertion_sort.skeleton_mini.c.o -o insertion_sort_O1_mini  lib_insertion_sort.O1.so 

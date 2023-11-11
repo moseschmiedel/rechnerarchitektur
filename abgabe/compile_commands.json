@@ -1,0 +1,230 @@
+[
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/bubble_sort_g.dir/sorting/bubble_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "output": "CMakeFiles/bubble_sort_g.dir/sorting/bubble_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/bubble_sort_g_mini.dir/bubble_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "output": "CMakeFiles/bubble_sort_g_mini.dir/bubble_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O1 -o CMakeFiles/bubble_sort_O1.dir/sorting/bubble_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "output": "CMakeFiles/bubble_sort_O1.dir/sorting/bubble_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/bubble_sort_O1_mini.dir/bubble_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "output": "CMakeFiles/bubble_sort_O1_mini.dir/bubble_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O2 -o CMakeFiles/bubble_sort_O2.dir/sorting/bubble_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "output": "CMakeFiles/bubble_sort_O2.dir/sorting/bubble_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/bubble_sort_O2_mini.dir/bubble_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "output": "CMakeFiles/bubble_sort_O2_mini.dir/bubble_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O3 -o CMakeFiles/bubble_sort_O3.dir/sorting/bubble_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/bubble_sort.c",
+  "output": "CMakeFiles/bubble_sort_O3.dir/sorting/bubble_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/bubble_sort_O3_mini.dir/bubble_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/bubble_sort.skeleton_mini.c",
+  "output": "CMakeFiles/bubble_sort_O3_mini.dir/bubble_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/insertion_sort_g.dir/sorting/insertion_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "output": "CMakeFiles/insertion_sort_g.dir/sorting/insertion_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/insertion_sort_g_mini.dir/insertion_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "output": "CMakeFiles/insertion_sort_g_mini.dir/insertion_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O1 -o CMakeFiles/insertion_sort_O1.dir/sorting/insertion_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "output": "CMakeFiles/insertion_sort_O1.dir/sorting/insertion_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/insertion_sort_O1_mini.dir/insertion_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "output": "CMakeFiles/insertion_sort_O1_mini.dir/insertion_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O2 -o CMakeFiles/insertion_sort_O2.dir/sorting/insertion_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "output": "CMakeFiles/insertion_sort_O2.dir/sorting/insertion_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/insertion_sort_O2_mini.dir/insertion_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "output": "CMakeFiles/insertion_sort_O2_mini.dir/insertion_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O3 -o CMakeFiles/insertion_sort_O3.dir/sorting/insertion_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/insertion_sort.c",
+  "output": "CMakeFiles/insertion_sort_O3.dir/sorting/insertion_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/insertion_sort_O3_mini.dir/insertion_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/insertion_sort.skeleton_mini.c",
+  "output": "CMakeFiles/insertion_sort_O3_mini.dir/insertion_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/quick_sort_g.dir/sorting/quick_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "output": "CMakeFiles/quick_sort_g.dir/sorting/quick_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/quick_sort_g_mini.dir/quick_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "output": "CMakeFiles/quick_sort_g_mini.dir/quick_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O1 -o CMakeFiles/quick_sort_O1.dir/sorting/quick_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "output": "CMakeFiles/quick_sort_O1.dir/sorting/quick_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/quick_sort_O1_mini.dir/quick_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "output": "CMakeFiles/quick_sort_O1_mini.dir/quick_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O2 -o CMakeFiles/quick_sort_O2.dir/sorting/quick_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "output": "CMakeFiles/quick_sort_O2.dir/sorting/quick_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/quick_sort_O2_mini.dir/quick_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "output": "CMakeFiles/quick_sort_O2_mini.dir/quick_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -O3 -o CMakeFiles/quick_sort_O3.dir/sorting/quick_sort.c.o -c /home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sorting/quick_sort.c",
+  "output": "CMakeFiles/quick_sort_O3.dir/sorting/quick_sort.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc  -I/home/mose/projects/rechnerarchitektur -I/home/mose/projects/rechnerarchitektur/sorting -Wall -g -o CMakeFiles/quick_sort_O3_mini.dir/quick_sort.skeleton_mini.c.o -c /home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/quick_sort.skeleton_mini.c",
+  "output": "CMakeFiles/quick_sort_O3_mini.dir/quick_sort.skeleton_mini.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/qsort_g_mini.dir/qsort.skeleton.c.o -c /home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "output": "CMakeFiles/qsort_g_mini.dir/qsort.skeleton.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/qsort_O1_mini.dir/qsort.skeleton.c.o -c /home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "output": "CMakeFiles/qsort_O1_mini.dir/qsort.skeleton.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/qsort_O2_mini.dir/qsort.skeleton.c.o -c /home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "output": "CMakeFiles/qsort_O2_mini.dir/qsort.skeleton.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -Wall -g -o CMakeFiles/qsort_O3_mini.dir/qsort.skeleton.c.o -c /home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "file": "/home/mose/projects/rechnerarchitektur/bin/qsort.skeleton.c",
+  "output": "CMakeFiles/qsort_O3_mini.dir/qsort.skeleton.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -DDEBUG -g -fopenmp -o CMakeFiles/sobel-seq-debug.dir/sobel.c.o -c /home/mose/projects/rechnerarchitektur/sobel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel.c",
+  "output": "CMakeFiles/sobel-seq-debug.dir/sobel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -g -fopenmp -o CMakeFiles/sobel-sequential-g.dir/sobel.c.o -c /home/mose/projects/rechnerarchitektur/sobel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel.c",
+  "output": "CMakeFiles/sobel-sequential-g.dir/sobel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -O1 -fopenmp -o CMakeFiles/sobel-sequential-O1.dir/sobel.c.o -c /home/mose/projects/rechnerarchitektur/sobel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel.c",
+  "output": "CMakeFiles/sobel-sequential-O1.dir/sobel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -O2 -fopenmp -o CMakeFiles/sobel-sequential-O2.dir/sobel.c.o -c /home/mose/projects/rechnerarchitektur/sobel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel.c",
+  "output": "CMakeFiles/sobel-sequential-O2.dir/sobel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -O3 -fopenmp -o CMakeFiles/sobel-sequential-O3.dir/sobel.c.o -c /home/mose/projects/rechnerarchitektur/sobel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel.c",
+  "output": "CMakeFiles/sobel-sequential-O3.dir/sobel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -DDEBUG -g -fopenmp -o CMakeFiles/sobel-par-debug.dir/sobel-parallel.c.o -c /home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "output": "CMakeFiles/sobel-par-debug.dir/sobel-parallel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -g -fopenmp -o CMakeFiles/sobel-parallel-g.dir/sobel-parallel.c.o -c /home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "output": "CMakeFiles/sobel-parallel-g.dir/sobel-parallel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -O1 -fopenmp -o CMakeFiles/sobel-parallel-O1.dir/sobel-parallel.c.o -c /home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "output": "CMakeFiles/sobel-parallel-O1.dir/sobel-parallel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -O2 -fopenmp -o CMakeFiles/sobel-parallel-O2.dir/sobel-parallel.c.o -c /home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "output": "CMakeFiles/sobel-parallel-O2.dir/sobel-parallel.c.o"
+},
+{
+  "directory": "/home/mose/projects/rechnerarchitektur/bin",
+  "command": "gcc   -O3 -fopenmp -o CMakeFiles/sobel-parallel-O3.dir/sobel-parallel.c.o -c /home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "file": "/home/mose/projects/rechnerarchitektur/sobel-parallel.c",
+  "output": "CMakeFiles/sobel-parallel-O3.dir/sobel-parallel.c.o"
+}
+]

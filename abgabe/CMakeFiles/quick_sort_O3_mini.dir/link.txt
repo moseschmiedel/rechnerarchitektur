@@ -1,0 +1,1 @@
+gcc CMakeFiles/quick_sort_O3_mini.dir/quick_sort.skeleton_mini.c.o -o quick_sort_O3_mini  lib_quick_sort.O3.so 
