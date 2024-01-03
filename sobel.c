@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define DEBUG 1
+
 const int S_x[3][3] = {{1, 0, -1}, {2, 0, -2}, {1, 0, -1}};
 const int S_y[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
 
@@ -75,7 +77,11 @@ int main(int argc, char *argv[]) {
 
 #ifdef DEBUG
     printf("Writing output file...\n");
-    write_ppm_file("sobel.ppm", final_image, eisvogel.width, eisvogel.height);
+    char* filename = "sobel.ppm";
+    if (argc >= 2) {
+        filename = argv[1];
+    }
+    write_ppm_file(filename, final_image, eisvogel.width, eisvogel.height);
     printf("Wrote output file.\n");
 #endif
 
