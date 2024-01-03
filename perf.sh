@@ -7,9 +7,10 @@ run_perf() {
     sleep 0.1
     echo "CACHE,measurement_type"
     perf stat -e cpu-clock,cycles,instructions,page-faults,cache-references,cache-misses,branches,branch-misses,duration_time -x , "${@:1}" 2>&1
+    sleep 0.1
 }
 
-for sobel in $(ls bin/sobel-sequential-*)
+for sobel in $(ls bin/sobel-parallel-* | rg -v '^.*\.csv$')
 do
     echo ""
     echo "$sobel,title"
@@ -17,7 +18,7 @@ do
     run_perf "$sobel"
 done
 
-for sobel in $(ls bin/sobel-parallel-*)
+for sobel in $(ls bin/sobel-parallel-* | rg -v '^.*\.csv$')
 do
     for num_threads in 1 2 4 8
     do
